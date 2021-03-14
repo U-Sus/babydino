@@ -1,4 +1,7 @@
-
+// Copyright (c) 2014 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+// extract from chromium source code by @liuwayong
 (function () {
     'use strict';
     /**
@@ -8,7 +11,6 @@
      * @constructor
      * @export
      */
-    var t = document.getElementById("theme");
     function Runner(outerContainerId, opt_config) {
         // Singleton
         if (Runner.instance_) {
@@ -477,9 +479,14 @@
 
                 this.containerEl.style.webkitAnimation = 'intro .4s ease-out 1 both';
                 this.containerEl.style.width = this.dimensions.WIDTH + 'px';
+
+                // if (this.touchController) {
+                //     this.outerContainerEl.appendChild(this.touchController);
+                // }
                 document.body.style.zoom = "250%"
                 this.playing = true;
                 this.activated = true;
+
 
             } else if (this.crashed) {
                 this.restart();
